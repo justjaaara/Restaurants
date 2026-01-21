@@ -45,7 +45,7 @@ public class UserContextTest
 
         // assert
         currentUser.Should().NotBeNull();
-        currentUser.Id.Should().Be("1");
+        currentUser.Id.Should().Be("2");
         currentUser.Email.Should().Be("test@test.com");
         currentUser.Roles.Should().ContainInOrder(UserRoles.Admin, UserRoles.User);
         currentUser.Nationality.Should().Be("German");
