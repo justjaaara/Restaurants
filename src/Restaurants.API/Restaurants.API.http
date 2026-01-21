@@ -1,0 +1,73 @@
+@Restaurants.API_HostAddress = https://localhost:7045
+
+@take=0
+POST {{Restaurants.API_HostAddress}}/api/weatherforecast/generate?take={{take}}
+Content-Type: application/json
+
+{
+  //GetTemperatureDTO
+}
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants?searchPhrase=&pageSize=5&pageNumber=1&sortBy=Name&sortDirection=descending
+
+###
+
+@id=0
+GET {{Restaurants.API_HostAddress}}/api/restaurants/{{id}}
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants
+Content-Type: application/json
+
+{
+  "Name": "Spicy LOG1",
+  "Description": "A culinary experience like no other",
+  "Category": "Italian",
+  "HasDelivery": true,
+  "ContactEmail": "contact@spicydelights.com",
+  "ContactNumber": "555-123-4667",
+  "City": "Metropolis",
+  "Street": "456 Gourmet Avenue",
+  "PostalCode": "54-321"
+}
+
+###
+
+@id=1
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/{id}
+
+###
+
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/{id}
+Content-Type: application/json
+
+{
+  "Name": "Spicy Deligths"
+}
+
+###
+
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/5
+Content-Type: application/json
+
+{
+  "Name": "Spicy patched",
+  "Description": "A culinary experience like no other",
+  "HasDelivery": true
+}
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants/1/dishes
+Content-Type: application/json
+
+{
+  Name: "Spagetti Bolognesa"
+  Description: "Delicious pasta"
+
+}
+
+###
